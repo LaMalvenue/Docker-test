@@ -3,14 +3,8 @@ services:
   app:
     build: .
     ports:
-      - 4001:3000
-    networks:
-      - app-network
+      - $PORT:3000
     depends_on:
       - mongodb
   mongodb:
     image: mongo:latest
-    networks:
-      - app-network
-networks:
-  app-network:
